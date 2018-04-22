@@ -1,0 +1,34 @@
+urxvt*background:			rgba:0000/0000/0000/D800
+!Colors
+URxvt.background:			#181516
+URxvt.foreground:			#d48950
+!black
+URxvt.color0  :				#60002b
+URxvt.color8  :				#60002b
+!red
+URxvt.color1  : 			#b30019
+URxvt.color9  :				#b30019
+!green
+URxvt.color2  :				#eb450a
+URxvt.color10 :				#eb450a
+!yellow
+URxvt.color3  :				#fba454
+URxvt.color11 :				#fba454
+!blue
+URxvt.color4  :				#86001a
+URxvt.color12 :				#86001a
+!magenta
+URxvt.color5  :				#d40031
+URxvt.color13 :				#d40031
+!cyan
+URxvt.color6  :				#8b0005
+URxvt.color14 :				#8b0005
+!white
+URxvt.color7  :				#911735
+URxvt.color15 : 			#911735
+
+
+!Specific Colors
+URxvt*.cursorColor :			#b30019
+i3bar.background:			#151515FF
+i3.font:				artwiz smoothansi 10

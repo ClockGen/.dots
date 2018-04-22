@@ -1,0 +1,15 @@
+#include ".xthemes/synth"
+!URxvt Settings
+URxvt.font:				xft:artwiz smoothansi:size=10
+Xft.antialias:				true
+urxvt*depth:				32
+Xft.rgba:				rgb
+Xft.hinting:				true
+Xft.autohint:				true
+Xft.hintstyle:				hintslight
+URxvt*.scrollBar:			false
+URxvt*.alt-font-width:			true
+URxvt*.letterSpace:			0
+URxvt*.lineSpace:			0
+URxvt*.saveLines:			4096
+URxvt*.cursorUnderline:			true
