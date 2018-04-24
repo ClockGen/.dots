@@ -1,6 +1,8 @@
 #include ".xthemes/synth"
 !URxvt Settings
-URxvt.font:				xft:artwiz smoothansi:size=10
+URxvt.font:				xft:artwiz smoothansi:size=10,\
+					xft:monospace:size=10,\
+					xft:Source Code Pro:size=10
 Xft.antialias:				true
 urxvt*depth:				32
 Xft.rgba:				rgb

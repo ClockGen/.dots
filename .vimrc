@@ -1,12 +1,12 @@
 "----------------------
+"
 "Vundle initialization" 
 set nocompatible
 filetype off
-set rtp+=~/.dots/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "----------------------
-
 "Vundle Plugin List"
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -19,7 +19,6 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim' 
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-Plugin 'liuchengxu/space-vim-dark'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mhinz/vim-signify'
 Plugin 'mbbill/undotree'
@@ -66,8 +65,8 @@ set omnifunc=syntaxcomplete#Complete
 "----------------------
 
 "General and plugin theming"
-"colorscheme space-vim-dark
-let g:airline_theme='tomorrow'
+"colorscheme antares
+"let g:airline_theme='aurora'
 hi Comment cterm=italic
 hi Normal ctermbg=none
 hi Folded ctermbg=251

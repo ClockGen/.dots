@@ -33,3 +33,4 @@ URxvt.color15 : 			#FFB3D2
 URxvt*.cursorColor :			#F29DC0
 i3bar.background:			#000000B0
 i3.font:				artwiz smoothansi 10
+qtbrwsr.font:				10 artwiz smoothansi
