@@ -1,8 +1,6 @@
-#include ".xthemes/synth"
+#include ".themelink"
+
 !URxvt Settings
-URxvt.font:				xft:artwiz smoothansi:size=10,\
-					xft:monospace:size=10,\
-					xft:Source Code Pro:size=10
 Xft.antialias:				true
 urxvt*depth:				32
 Xft.rgba:				rgb
@@ -15,3 +13,17 @@ URxvt*.letterSpace:			0
 URxvt*.lineSpace:			0
 URxvt*.saveLines:			4096
 URxvt*.cursorUnderline:			true
+
+!Rofi Settings
+rofi.modi:				window,run,drun
+rofi.lines:				25
+rofi.columns:				1
+rofi.sidebar-mode:			true
+rofi.show-icons:			true
+rofi.width:				20%
+rofi.auto-select:			true
+rofi.line-padding:			2
+rofi.line-margin:			2
+rofi.location:				0
+
+

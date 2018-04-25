@@ -1,34 +1,83 @@
-urxvt*background:			rgba:0000/0000/0000/D800
-!Colors
-URxvt.background:			#181516
-URxvt.foreground:			#d48950
-!black
-URxvt.color0  :				#60002b
-URxvt.color8  :				#60002b
-!red
-URxvt.color1  : 			#b30019
-URxvt.color9  :				#b30019
-!green
-URxvt.color2  :				#eb450a
-URxvt.color10 :				#eb450a
-!yellow
-URxvt.color3  :				#fba454
-URxvt.color11 :				#fba454
-!blue
-URxvt.color4  :				#86001a
-URxvt.color12 :				#86001a
-!magenta
-URxvt.color5  :				#d40031
-URxvt.color13 :				#d40031
-!cyan
-URxvt.color6  :				#8b0005
-URxvt.color14 :				#8b0005
-!white
-URxvt.color7  :				#911735
-URxvt.color15 : 			#911735
+!------Theme definitions------
 
+#define bg		#181516
+#define fg		#d48950
 
-!Specific Colors
-URxvt*.cursorColor :			#b30019
-i3bar.background:			#151515FF
-i3.font:				artwiz smoothansi 10
+#define c0		#60002b
+#define c8		#60002b
+
+#define c1		#b30019
+#define c9		#b30019
+
+#define c2		#eb450a
+#define c10		#eb450a
+
+#define c3		#fba454
+#define c11		#fba454
+
+#define c4		#86001a
+#define c12		#86001a
+
+#define c5		#d40031
+#define c13		#d40031
+
+#define c6		#8b0005
+#define c14		#8b0005
+
+#define c7		#911735
+#define c15		#911735
+
+#define mainfont	artwiz smoothansi
+#define symbolfont	Source Code Pro
+#define mainfontsize	10
+
+#define rofibg		#FF000000
+#define i3barbg		#000000FF
+#define urxvtbg		rgba:0000/0000/0000/FF00
+
+#define compblur	
+
+!------Colors------
+
+!URxvt
+
+URxvt.background:			bg
+URxvt.foreground:			fg
+URxvt.color0:				c0
+URxvt.color8:				c8
+URxvt.color1:	 			c1
+URxvt.color9:				c9
+URxvt.color2:				c2
+URxvt.color10:				c10
+URxvt.color3:				c3
+URxvt.color11:				c11
+URxvt.color4:				c4
+URxvt.color12:				c12
+URxvt.color5:				c5
+URxvt.color13:				c13
+URxvt.color6:				c6
+URxvt.color14:				c14
+URxvt.color7:				c7
+URxvt.color15: 				c15
+URxvt*.cursorColor :			c7
+urxvt*background:			urxvtbg
+
+!Rofi
+
+rofi.color-window:			rofibg,c1,#00000000
+rofi.color-normal:			#00000000,fg,#00000000,c1,bg
+
+!i3bar
+i3bar.background:			i3barbg
+
+!-------Fonts------
+
+URxvt.font:				xft:mainfont:size=mainfontsize,\
+					xft:symbolfont:size=mainfontsize,\
+					xft:monospace:size=mainfontsize
+i3.font:				mainfont mainfontsize
+rofi.font:				mainfont mainfontsize
+
+!-------Other------
+
+compton.blur:				compblur

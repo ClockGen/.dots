@@ -25,11 +25,9 @@ floating_modifier $mod
 ################################
 
 exec_always --no-startup-id ~/.fehbg
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+exec --no-startup-id compton --config ~/.config/compton/compton.conf $compblur
 exec --no-startup-id autocutsel -fork & autocutsel -selection PRIMARY -fork
 exec --no-startup-id dunst -font "$font" -frame_width "1" -frame_color "$color1" -lf "$foreground" -nf "$foreground" -cf "$foreground" -lb "$background" -nb "$background" -cb "$background"
-#exec --no-startup-id mpd ~/.config/mpd/mpd.conf
-#exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/black/.config/i3/ws1.json'"
 
 ################################
 #Workspaces
@@ -57,9 +55,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Starting Rofi
-bindcode $mod+40 exec "rofi -config -modi \\"window,run,drun\\" -show run -show-icons -lines 20 -columns 3 -width 60% -height 30% -sidebar-mode -auto-select -color-normal \\"$background,$foreground,$background,$color1,$background\\" -color-window \\"$background,$color1,$background\\" -font \\"$font\\""
-bindcode $mod+23 exec "rofi -config -modi \\"window,run,drun\\" -show window -show-icons -lines 20 -columns 3 -width 60% -height 30% -sidebar-mode -auto-select -color-normal \\"$background,$foreground,$background,$color1,$background\\" -color-window \\"$background,$color1,$background\\" -font \\"$font\\""
-bindcode $mod+53 exec "rofi -config -modi \\"window,run,drun\\" -show drun -show-icons -lines 20 -columns 3 -width 60% -height 30% -sidebar-mode -auto-select -color-normal \\"$background,$foreground,$background,$color1,$background\\" -color-window \\"$background,$color1,$background\\" -font \\"$font\\""
+bindcode $mod+40 exec rofi -show run
+bindcode $mod+23 exec rofi -show window
+bindcode $mod+53 exec rofi -show drun
 
 # Screenshot
 bindcode $mod+107 exec scrot
@@ -158,7 +156,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r exec xrdb -merge ~/.Xresources && i3-msg restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -font 'artwiz smoothansi 10' -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 ################################
 #Binding Modes
@@ -190,7 +188,7 @@ bindsym $mod+r mode "resize"
 #Theming
 ################################
 
-#Color variables
+#Resource variables
 set_from_resource $background URxvt.background #FF00FF
 set_from_resource $foreground URxvt.foreground #FF00FF
 set_from_resource $color0 URxvt.color0 #FF00FF
@@ -203,7 +201,8 @@ set_from_resource $color6 URxvt.color6 #FF00FF
 set_from_resource $color7 URxvt.color7 #FF00FF
 set_from_resource $barbg i3bar.background #FF00FF
 set_from_resource $font i3.font monospace 8
-set_from_resource $wallpaper i3.wallpaper 123
+set_from_resource $compblur compton.blur ''
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #ffffff #ffffff #ffffff   $color1
 client.focused_inactive #ffffff #ffffff #ffffff #ffffff   $background

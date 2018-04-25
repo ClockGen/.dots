@@ -65,11 +65,11 @@ set omnifunc=syntaxcomplete#Complete
 "----------------------
 
 "General and plugin theming"
-"colorscheme antares
-"let g:airline_theme='aurora'
+colorscheme thestars
+let g:airline_theme='violet'
 hi Comment cterm=italic
-hi Normal ctermbg=none
-hi Folded ctermbg=251
+"hi Normal ctermbg=none
+"hi Folded ctermbg=251
 "----------------------
 
 "Nerd Tree settings
