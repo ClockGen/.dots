@@ -28,7 +28,6 @@
 #define c15		#FFB3D2
 
 #define mainfont	artwiz smoothansi
-#define symbolfont	Source Code Pro
 #define mainfontsize	10
 
 #define rofibg		#C5000000
@@ -73,8 +72,8 @@ i3bar.background:			i3barbg
 !-------Fonts------
 
 URxvt.font:				xft:mainfont:size=mainfontsize,\
-					xft:symbolfont:size=mainfontsize,\
-					xft:monospace:size=mainfontsize
+					xft:Source Code Pro:size=mainfontsize,\
+					xft:FontAwesome:size=mainfontsize
 i3.font:				mainfont mainfontsize
 rofi.font:				mainfont mainfontsize
 

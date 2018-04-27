@@ -1,16 +1,31 @@
 #!/bin/bash
-BPATH="/sys/class/backlight/intel_backlight/"
-max=$(cat ${BPATH}max_brightness)
-current=$(cat ${BPATH}brightness)
-incr=$(( $max/100*5  ))
+if [[ ! -f /tmp/xrandrbrightness  ]]; then
+	echo 1.0 > /tmp/xrandrbrightness
+fi
+brightness=$(cat /tmp/xrandrbrightness)
+monitor=$(xrandr | grep "primary" | awk '{print $1}')
+increment='0.1'
+if (( $(bc <<< "${brightness}>1") )); then
+	symbol=
+elif (( $(bc <<< "${brightness}>0.5") )); then
+	symbol=
+else
+	symbol=
+fi
 case $1 in
-	up)
-		echo "$(( $current+$incr ))" > "${BPATH}brightness"
+	incr)
+		if (( $(bc <<< "$brightness<2") )); then
+			echo $(bc <<< "${brightness}+${increment}") > /tmp/xrandrbrightness
+			xrandr --output $monitor --brightness $(cat /tmp/xrandrbrightness)
+		fi
 	;;
-	down)
-		echo "$(( $current-$incr ))" > "${BPATH}brightness"
+	decr)
+		if (( $(bc <<< "$brightness>0.1")  )); then
+			echo $(bc <<< "${brightness}-${increment}") > /tmp/xrandrbrightness
+			xrandr --output $monitor --brightness $(cat /tmp/xrandrbrightness)
+		fi
 	;;
 	*)
-		echo "$(bc <<< "scale=2; $current/$max*100" | awk -F '.' '{print $1}')%"
+		echo "${symbol}  $(bc <<< "${brightness}*100" | awk -F '.' '{print $1}')%"
 	;;
 esac

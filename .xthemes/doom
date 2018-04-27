@@ -28,14 +28,13 @@
 #define c15		#911735
 
 #define mainfont	artwiz smoothansi
-#define symbolfont	Source Code Pro
 #define mainfontsize	10
 
-#define rofibg		#FF000000
-#define i3barbg		#000000FF
-#define urxvtbg		rgba:0000/0000/0000/FF00
+#define rofibg		#D0000000
+#define i3barbg		#000000D0
+#define urxvtbg		rgba:0000/0000/0000/D000
 
-#define compblur	
+#define compblur
 
 !------Colors------
 
@@ -73,8 +72,8 @@ i3bar.background:			i3barbg
 !-------Fonts------
 
 URxvt.font:				xft:mainfont:size=mainfontsize,\
-					xft:symbolfont:size=mainfontsize,\
-					xft:monospace:size=mainfontsize
+					xft:Source Code Pro:size=mainfontsize,\
+					xft:FontAwesome:size=mainfontsize
 i3.font:				mainfont mainfontsize
 rofi.font:				mainfont mainfontsize
 

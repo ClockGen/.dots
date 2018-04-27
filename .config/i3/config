@@ -33,16 +33,16 @@ exec --no-startup-id dunst -font "$font" -frame_width "1" -frame_color "$color1"
 #Workspaces
 ################################i
 
-set $ws1 "1:1"
-set $ws2 "2:2"
-set $ws3 "3:3"
-set $ws4 "4:4"
-set $ws5 "5:5"
-set $ws6 "6:6"
-set $ws7 "7:7"
-set $ws8 "8:8"
-set $ws9 "9:9"
-set $ws10 "10:10"
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 ################################
 #Keybindings
@@ -145,8 +145,8 @@ bindcode $mod+Shift+20 exec ~/.config/i3/scripts/mpdctl.sh seekb
 bindcode $mod+Shift+21 exec ~/.config/i3/scripts/mpdctl.sh seekf
 
 #brightnesss control
-bindsym $mod+F5 exec ~/.config/i3/scripts/scrctl.sh down && pkill -RTMIN+4 i3blocks
-bindsym $mod+F6 exec ~/.config/i3/scripts/scrctl.sh up && pkill -RTMIN+4 i3blocks
+bindsym $mod+F5 exec ~/.config/i3/scripts/scrctl.sh decr && pkill -RTMIN+4 i3blocks
+bindsym $mod+F6 exec ~/.config/i3/scripts/scrctl.sh incr && pkill -RTMIN+4 i3blocks
 
 #layout control
 bindcode $mod+64 exec ~/.config/i3/scripts/kbctl.sh switch && pkill -RTMIN+5 i3blocks
@@ -203,6 +203,8 @@ set_from_resource $barbg i3bar.background #FF00FF
 set_from_resource $font i3.font monospace 8
 set_from_resource $compblur compton.blur ''
 
+set $wssymbol 
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #ffffff #ffffff #ffffff   $color1
 client.focused_inactive #ffffff #ffffff #ffffff #ffffff   $background
@@ -228,9 +230,9 @@ bar {
 		statusline $foreground
 		separator $color1
 
-		focused_workspace  $color1 $barbg $foreground
+		focused_workspace  $barbg $barbg $color1
 		active_workspace   $barbg $barbg $foreground
-		inactive_workspace $barbg $barbg $foreground
+		inactive_workspace $barbg $barbg $color0
 		urgent_workspace   $color0 $barbg $foreground
 		binding_mode       $color6 $barbg $foreground
 	}

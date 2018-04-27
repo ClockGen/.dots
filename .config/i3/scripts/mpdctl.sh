@@ -31,9 +31,19 @@ case $1 in
 		STAT=$(echo "$OUT" | awk '{print $1}' | sed -n '2s/^.\(.*\).$/\1/p')
 		TRACK=$(echo "$OUT" | sed -n 1p)
 		if [[ -n $STAT ]]; then
-			echo "$STAT | $TRACK"
+			case $STAT in
+				playing)
+					echo "  $TRACK"
+				;;
+				paused)
+					echo "  $TRACK"
+				;;
+				*)
+					echo ""
+				;;
+			esac
 		else
-			echo "Stopped"
+			echo ""
 		fi
 	;;
 esac

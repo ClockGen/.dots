@@ -9,6 +9,6 @@ case $1 in
 		fi
 	;;	
 	*)
-		echo $layt	
+		echo "  $layt"	
 	;;
 esac

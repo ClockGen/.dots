@@ -10,10 +10,15 @@ case "$1" in
 		pamixer -t
 	;;
 	*)
+		volume=$(pamixer --get-volume)
 		if pamixer --get-mute >/dev/null ; then
-			echo "Muted"
+			echo ""
 		else
-			echo "$(pamixer --get-volume)%"
+			if [[ $volume -ge "50" ]]; then
+				echo "  ${volume}%"
+			else
+				echo "  ${volume}%"
+			fi
 		fi
 	;;
 esac
