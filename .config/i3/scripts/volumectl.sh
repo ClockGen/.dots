@@ -14,7 +14,7 @@ case "$1" in
 		if pamixer --get-mute >/dev/null ; then
 			echo ""
 		else
-			if [[ $volume -ge "50" ]]; then
+			if [[ $volume -ge "40" ]]; then
 				echo "  ${volume}%"
 			else
 				echo "  ${volume}%"

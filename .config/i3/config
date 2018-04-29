@@ -145,9 +145,15 @@ bindcode $mod+Shift+20 exec ~/.config/i3/scripts/mpdctl.sh seekb
 bindcode $mod+Shift+21 exec ~/.config/i3/scripts/mpdctl.sh seekf
 
 #brightnesss control
-bindsym $mod+F5 exec ~/.config/i3/scripts/scrctl.sh decr && pkill -RTMIN+4 i3blocks
-bindsym $mod+F6 exec ~/.config/i3/scripts/scrctl.sh incr && pkill -RTMIN+4 i3blocks
+bindsym $mod+F5 exec ~/.config/i3/scripts/colorctl.sh brdecr && pkill -RTMIN+4 i3blocks
+bindsym $mod+F6 exec ~/.config/i3/scripts/colorctl.sh brincr && pkill -RTMIN+4 i3blocks
 
+#color temperature control
+bindsym $mod+Shift+F5 exec ~/.config/i3/scripts/colorctl.sh decr && pkill -RTMIN+6 i3blocks
+bindsym $mod+Shift+F6 exec ~/.config/i3/scripts/colorctl.sh incr && pkill -RTMIN+6 i3blocks
+
+#Reset xrandr gamma
+bindsym $mod+Shift+F7 exec ~/.config/i3/scripts/colorctl.sh reset && pkill -RTMIN+6 i3blocks && pkill -RTMIN+4 i3blocks
 #layout control
 bindcode $mod+64 exec ~/.config/i3/scripts/kbctl.sh switch && pkill -RTMIN+5 i3blocks
 
@@ -156,7 +162,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r exec xrdb -merge ~/.Xresources && i3-msg restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -font 'artwiz smoothansi 10' -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/logout.sh
 
 ################################
 #Binding Modes
